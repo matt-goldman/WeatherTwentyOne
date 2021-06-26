@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using WeatherClient2021;
 
@@ -14,7 +15,9 @@ namespace WeatherTwentyOne.ViewModels
     public class FavoritesViewModel : INotifyPropertyChanged
     {
         IWeatherService weatherService = new WeatherService(null);
-        
+
+        public ICommand FetchCommand { get; set; }
+
         private ObservableCollection<Location> favorites;
         public ObservableCollection<Location> Favorites {
             get {
@@ -57,7 +60,8 @@ namespace WeatherTwentyOne.ViewModels
 
         public FavoritesViewModel()
         {
-            Fetch();
+            //Fetch();
+            FetchCommand = new Command(() => Fetch());
         }
     }
 }

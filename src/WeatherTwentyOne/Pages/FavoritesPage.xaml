@@ -96,6 +96,8 @@
                         FontSize="18"
                         WidthRequest="240"
                         VerticalOptions="Center"/>
+                    <Button Text="Fetch"
+                            Command="{Binding FetchCommand}"/>
                 </StackLayout>
 
                 <!-- Actual Content -->
